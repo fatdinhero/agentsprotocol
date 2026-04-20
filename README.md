@@ -12,13 +12,14 @@ validation: every claim is scored against a public knowledge corpus, every
 block is additionally gated by a statistical non-collusion test Psi, and
 only blocks that clear both thresholds enter the canonical DAG.
 
-## Three Pillars
+## Four Research Pillars
 
-| Layer | Contribution                                   | Reference                                |
-|-------|------------------------------------------------|------------------------------------------|
-| MBT   | Statistical certificate of validator independence (Psi) | Meta-Bell Theory (Dinc, 2026)      |
-| PoWW  | Composite truth score T x C x R x E over information units | Proof of WiseWork v2 (Dinc, 2026)  |
-| PoISV | Operational protocol: S_con + Psi + GHOSTDAG ordering     | PoISV Whitepaper v1.0 (Dinc, 2026) |
+| Layer     | Contribution                                   | Reference                                |
+|-----------|------------------------------------------------|------------------------------------------|
+| MBT       | Statistical certificate of validator independence (Psi) | Meta-Bell Theory (Dinc, 2026)      |
+| PoWW      | Composite truth score T x C x R x E over information units | Proof of WiseWork v2 (Dinc, 2026)  |
+| PoISV     | Operational protocol: S_con + Psi + GHOSTDAG ordering     | PoISV Whitepaper v1.0 (Dinc, 2026) |
+| Bell-SPVU | Formal Proof of MetaBell Operator — Ψ ≈ 1 − \|Ŝ\|/(2√2) | [Bell-SPVU Paper (Dinc, 2026)](https://doi.org/10.5281/zenodo.19656679) |
 
 ## Quick Start
 

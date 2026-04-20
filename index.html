@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AgentsProtocol</title>
+  <style>
+    :root { --accent: #58a6ff; --bg: #0d1117; --fg: #c9d1d9; --card: #161b22; --border: #30363d; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--bg); color: var(--fg); font-family: 'Segoe UI', system-ui, sans-serif; line-height: 1.7; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    header { padding: 3rem 2rem 2rem; text-align: center; border-bottom: 1px solid var(--border); }
+    header h1 { font-size: 2.2rem; color: #fff; }
+    header .tagline { color: #8b949e; margin-top: .5rem; font-style: italic; }
+    .badges { margin-top: 1rem; display: flex; gap: .5rem; justify-content: center; flex-wrap: wrap; }
+    main { max-width: 960px; margin: 0 auto; padding: 2rem; }
+    section { margin-bottom: 3rem; }
+    h2 { font-size: 1.3rem; color: #fff; border-bottom: 1px solid var(--border); padding-bottom: .4rem; margin-bottom: 1.2rem; }
+    table { width: 100%; border-collapse: collapse; font-size: .9rem; }
+    th { background: var(--card); color: #fff; padding: .6rem .9rem; text-align: left; border: 1px solid var(--border); }
+    td { padding: .6rem .9rem; border: 1px solid var(--border); vertical-align: top; }
+    tr:nth-child(even) { background: var(--card); }
+    .pillar-num { display: inline-block; background: var(--accent); color: #0d1117; border-radius: 50%; width: 1.6rem; height: 1.6rem; text-align: center; line-height: 1.6rem; font-weight: bold; margin-right: .4rem; }
+    .doc-count { display: inline-block; background: var(--accent); color: #0d1117; border-radius: 4px; padding: .1rem .5rem; font-weight: bold; font-size: .9rem; margin-left: .5rem; }
+    .formula { font-family: monospace; background: var(--card); padding: .3rem .7rem; border-radius: 4px; border: 1px solid var(--border); display: inline-block; }
+    pre { background: #0d1117; border: 1px solid var(--border); padding: 1rem; border-radius: 6px; overflow-x: auto; font-size: .85rem; }
+    code { background: var(--card); padding: .1rem .3rem; border-radius: 3px; font-size: .87em; }
+    footer { background: var(--card); border-top: 1px solid var(--border); padding: 2rem; text-align: center; font-size: .85rem; color: #8b949e; }
+    footer a { color: var(--accent); }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>AgentsProtocol</h1>
+  <p class="tagline">MCP/A2A connect systems. AgentsProtocol proves the content is true.</p>
+  <div class="badges">
+    <a href="https://doi.org/10.5281/zenodo.19642292">
+      <img src="https://zenodo.org/badge/DOI/10.5281/zenodo.19642292.svg" alt="DOI" />
+    </a>
+    <img src="https://img.shields.io/badge/Bitcoin_Block-945622-orange" alt="Bitcoin Block" />
+    <img src="https://img.shields.io/badge/license-Apache--2.0-blue" alt="License" />
+    <img src="https://github.com/fatdinhero/agentsprotocol/actions/workflows/ci.yml/badge.svg" alt="CI" />
+  </div>
+</header>
+
+<main>
+
+  <section id="about">
+    <h2>About</h2>
+    <p>
+      An open protocol and reference client for decentralised <strong>semantic</strong>
+      validation: every claim is scored against a public knowledge corpus, every block is
+      additionally gated by a statistical non-collusion test Ψ, and only blocks that clear
+      both thresholds enter the canonical DAG.
+    </p>
+  </section>
+
+  <section id="pillars">
+    <h2>Research Pillars</h2>
+    <table>
+      <thead>
+        <tr><th>#</th><th>Layer / Name</th><th>Contribution</th><th>Reference</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="pillar-num">1</span></td>
+          <td><strong>MBT</strong> — Meta-Bell Theory</td>
+          <td>Statistical certificate of validator independence (Ψ)</td>
+          <td><a href="https://doi.org/10.5281/zenodo.19642292">Meta-Bell Theory (Dinc, 2026)</a></td>
+        </tr>
+        <tr>
+          <td><span class="pillar-num">2</span></td>
+          <td><strong>PoWW</strong> — Proof of WiseWork v2</td>
+          <td>Composite truth score T × C × R × E over information units</td>
+          <td><a href="https://doi.org/10.5281/zenodo.19642292">Proof of WiseWork v2 (Dinc, 2026)</a></td>
+        </tr>
+        <tr>
+          <td><span class="pillar-num">3</span></td>
+          <td><strong>PoISV</strong> — Proof of Independent Semantic Validation</td>
+          <td>Operational protocol: S_con + Ψ + GHOSTDAG ordering</td>
+          <td><a href="https://doi.org/10.5281/zenodo.19642292">PoISV Whitepaper v1.0 (Dinc, 2026)</a></td>
+        </tr>
+        <tr>
+          <td><span class="pillar-num">4</span></td>
+          <td><strong>Bell-SPVU</strong> — Formal Proof of MetaBell Operator</td>
+          <td>
+            Formal mathematical proof of the MetaBell operator and spectral bound.<br />
+            Formula: <span class="formula">Ψ ≈ 1 − |Ŝ|/(2√2)</span>
+          </td>
+          <td><a href="https://doi.org/10.5281/zenodo.19656679">Bell-SPVU Paper (Dinc, 2026)</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section id="quickstart">
+    <h2>Quick Start</h2>
+    <pre><code>pip install agentsprotocol</code></pre>
+    <pre><code>from agentsprotocol import compute_s_con, compute_psi, check_acceptance
+
+s = compute_s_con("The sky is blue.", ["The sky is blue."], tau=0.7)
+psi = compute_psi([[0.1, 0.2, 0.3, 0.4], [0.3, 0.2, 0.1, 0.4]])
+print(check_acceptance([s], psi, theta_min=0.6, psi_min=0.3))</code></pre>
+    <p style="margin-top:.7rem;">Full end-to-end demo: <code>examples/demo.py</code></p>
+  </section>
+
+  <section id="archive">
+    <h2>Document Archive <span class="doc-count">18 Documents</span></h2>
+    <table>
+      <thead>
+        <tr><th>#</th><th>Document</th><th>DOI / Link</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>1–3</td><td>AgentsProtocol Whitepaper v1.2 (DE/EN/TR)</td><td><a href="https://doi.org/10.5281/zenodo.19642292">10.5281/zenodo.19642292</a></td></tr>
+        <tr><td>4–6</td><td>AgentsProtocol Executive Summary (DE/EN/TR)</td><td><a href="https://doi.org/10.5281/zenodo.19642292">10.5281/zenodo.19642292</a></td></tr>
+        <tr><td>7</td><td>AgentsProtocol DevDocs</td><td><a href="https://doi.org/10.5281/zenodo.19642292">10.5281/zenodo.19642292</a></td></tr>
+        <tr><td>8</td><td>AgentsProtocol Legal &amp; Governance</td><td><a href="https://doi.org/10.5281/zenodo.19642292">10.5281/zenodo.19642292</a></td></tr>
+        <tr><td>9–11</td><td>MetaBell Theorie v1 (DE/EN/TR)</td><td><a href="https://doi.org/10.5281/zenodo.19642292">10.5281/zenodo.19642292</a></td></tr>
+        <tr><td>12–13</td><td>PoWW Whitepaper v2 (DE/EN/TR)</td><td><a href="https://doi.org/10.5281/zenodo.19642292">10.5281/zenodo.19642292</a></td></tr>
+        <tr><td>14–16</td><td>PoISV Whitepaper v1.0 (DE/EN/TR)</td><td><a href="https://doi.org/10.5281/zenodo.19642292">10.5281/zenodo.19642292</a></td></tr>
+        <tr><td>17</td><td>AgentsProtocol DevDocs (EN translation)</td><td><a href="https://doi.org/10.5281/zenodo.19642292">10.5281/zenodo.19642292</a></td></tr>
+        <tr>
+          <td><strong>18</strong></td>
+          <td><strong><a href="https://doi.org/10.5281/zenodo.19656679">Bell-SPVU Paper</a></strong> — Formal Proof of MetaBell Operator</td>
+          <td><a href="https://doi.org/10.5281/zenodo.19656679">10.5281/zenodo.19656679</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section id="structure">
+    <h2>Repository Structure</h2>
+    <pre>
+agentsprotocol/
+  src/agentsprotocol/       Python reference implementation
+  src/validator/            Rust validator skeleton (tokio + libp2p + zkVM)
+  schema/                   JSON schemas (claim-v1.0, control-set-v1)
+  examples/                 Runnable demos + example claim + control set
+  tests/                    pytest suite (62 tests, all green)
+  docs/                     architecture.md, api.md, math.md
+  .github/workflows/        CI (pytest + flake8 + cargo check)</pre>
+  </section>
+
+  <section id="roadmap">
+    <h2>Roadmap</h2>
+    <table>
+      <thead><tr><th>Phase</th><th>Scope</th><th>Status</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td>Claim parser, S_con library, Psi-test, JSON-schema tests</td><td>Reference code shipped</td></tr>
+        <tr><td>2</td><td>GHOSTDAG consensus engine, synthetic Psi simulations</td><td>Skeleton</td></tr>
+        <tr><td>3</td><td>Local testnet (no zkVM), then zkVM integration (Nexus / RISC Zero)</td><td>Planned</td></tr>
+        <tr><td>4</td><td>Full consensus, security audit, testnet launch</td><td>Planned</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section id="citation">
+    <h2>Citation</h2>
+    <pre><code>@software{dinc_agentsprotocol_2026,
+  author       = {Fatih Dinc},
+  title        = {AgentsProtocol: Reference Implementation},
+  year         = 2026,
+  publisher    = {Zenodo},
+  version      = {1.0.0},
+  doi          = {10.5281/zenodo.19642292},
+  url          = {https://github.com/fatdinhero/agentsprotocol}
+}</code></pre>
+  </section>
+
+  <section id="timestamp">
+    <h2>Timestamp</h2>
+    <p>
+      All contents of this repository (source and docs) are included in the
+      SHA-256 hash attested on <strong>Bitcoin block 945622 (2026-04-18)</strong>.
+    </p>
+  </section>
+
+</main>
+
+<footer>
+  <p>
+    Fatih Dinc &mdash; Pforzheim, Germany &mdash;
+    <a href="https://github.com/fatdinhero/agentsprotocol">GitHub</a> &mdash;
+    <a href="https://doi.org/10.5281/zenodo.19642292">Zenodo DOI 10.5281/zenodo.19642292</a>
+  </p>
+  <p style="margin-top:.5rem;">License: Apache-2.0 (code) | CC BY 4.0 (docs)</p>
+</footer>
+
+</body>
+</html>
