@@ -33,6 +33,7 @@ function psi(claim: string): number {
 function tags(claim: string): string[] {
   const t: string[] = [], l = claim.toLowerCase();
   if (/never|always|100%|guaranteed/.test(l)) t.push("Absolut-Language");
+  if (/shocking|breaking|revealed|exposed|alert/.test(l)) t.push("Sensationalism");
   if (/conspiracy|hoax|cover.?up/.test(l)) t.push("Conspiracy");
   if (/fear|danger|crisis|emergency/.test(l)) t.push("Fear-Language");
   if (/10x|100x|moon|rocket/.test(l)) t.push("Hype");
