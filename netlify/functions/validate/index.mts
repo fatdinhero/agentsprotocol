@@ -17,10 +17,15 @@ function sCon(claim: string): number {
   return Math.max(0, (Math.max(...variants.map(c => cosineSim(v, stubEmbed(c)))) - 0.7) / 0.3);
 }
 function psi(claim: string): number {
-  const vs = ["_v1","_v2","_v3"].map(s => stubEmbed(claim+s));
+  const words = claim.split(/\s+/);
+  const mid = Math.ceil(words.length / 2);
+  const v1 = stubEmbed(words.slice(0, mid).join(" ") || claim[0]);
+  const v2 = stubEmbed(words.slice(mid).join(" ") || claim[claim.length-1]);
+  const v3 = stubEmbed(words.filter((_,i)=>i%2===0).join(" ") || claim.slice(0,3));
+  const vs = [v1, v2, v3];
   let sum = 0, n = 0;
   for (let i = 0; i < 3; i++) for (let j = i+1; j < 3; j++) { sum += Math.abs(cosineSim(vs[i],vs[j])); n++; }
-  return 1 - sum/n;
+  return Math.min(1, Math.max(0, 1 - sum/n));
 }
 function tags(claim: string): string[] {
   const t: string[] = [], l = claim.toLowerCase();
