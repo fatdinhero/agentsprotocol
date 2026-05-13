@@ -56,8 +56,9 @@ export default async (req: Request, _ctx: Context) => {
     const pen = AMP[amplification.toLowerCase()] ?? 1.0;
     const sg = tags(claim); const tp = 1 - sg.length * 0.06;
     const sc = sCon(claim); const ps = psi(claim);
-    const t = Math.max(0.1, bt*pen*tp), c = Math.max(0.1, bc*(0.5+sc*0.5));
-    const r = Math.max(0.1, br*ps), e = Math.max(0.1, be*pen);
+    const comboFactor = (sg.includes("Conspiracy") && (sg.includes("Sensationalism") || sg.includes("Fear-Language"))) ? 0.12 : 1.0;
+    const t = Math.max(0.1, bt*pen*tp*comboFactor), c = Math.max(0.1, bc*(0.5+sc*0.5)*comboFactor);
+    const r = Math.max(0.1, br*ps), e = Math.max(0.1, be*pen*comboFactor);
     const ws = t*c*r*e;
     const R = (v:number) => Math.round(v*1000)/1000;
     return new Response(JSON.stringify({
