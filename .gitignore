@@ -1,4 +1,3 @@
-<<<<<<< Updated upstream
 # Python
 __pycache__/
 *.py[cod]
@@ -34,10 +33,3 @@ detect/wheels/
 detect/agentsprotocol_pkg/
 embed/wheels/
 embed/model/
-||||||| Stash base
-=======
-__pycache__/
-*.pyc
-__pycache__/
-*.pyc
->>>>>>> Stashed changes
