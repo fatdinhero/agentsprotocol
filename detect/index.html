@@ -367,7 +367,26 @@ function extractSignals(text){
 }
 
 /* ── score computation ── */
-function computeScores(text, domain, amp){
+async function computeScores(text, domain, amp){
+  try {
+    const res = await fetch('/validate', {
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({claim:text, category:domain, amplification:amp})
+    });
+    if (res.ok) {
+      const d = await res.json();
+      return {
+        wise:d.wise_score, psi:d.psi, sCon:d.s_con,
+        t:d.t, c:d.c, r:d.r, e:d.e,
+        risk:d.manipulation_risk, tags:d.signal_tags||[]
+      };
+    }
+  } catch(e) { console.warn('API offline, using local fallback', e); }
+  // JS FALLBACK
+  return computeScoresFallback(text, domain, amp);
+}
+function computeScoresFallback(text, domain, amp){
   const S = extractSignals(text);
   const wc = text.split(/\s+/).filter(w=>w.length>1).length;
 
