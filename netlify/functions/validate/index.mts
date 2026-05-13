@@ -40,7 +40,7 @@ function tags(claim: string): string[] {
   return t;
 }
 const CAT: Record<string,number[]> = {
-  science:[0.9,0.85,0.9,0.88], finance:[0.75,0.7,0.75,0.72],
+  science:[0.9,0.85,0.9,0.88], finance:[0.78,0.74,0.78,0.75],
   politics:[0.6,0.55,0.65,0.58], crypto:[0.5,0.45,0.5,0.48], general:[0.72,0.68,0.72,0.70]
 };
 const AMP: Record<string,number> = { isolated:1.0, trending:0.85, coordinated:0.6 };
