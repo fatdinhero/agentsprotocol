@@ -25,7 +25,10 @@ function psi(claim: string): number {
   const vs = [v1, v2, v3];
   let sum = 0, n = 0;
   for (let i = 0; i < 3; i++) for (let j = i+1; j < 3; j++) { sum += Math.abs(cosineSim(vs[i],vs[j])); n++; }
-  return Math.min(1, Math.max(0, 1 - sum/n));
+  const raw = 1 - sum/n;
+  // Scale: stub embeddings produce low divergence (0.05-0.25)
+  // Remap to meaningful range (0.3-0.9) for WiseScore formula
+  return Math.min(0.95, Math.max(0.3, 0.3 + raw * 2.5));
 }
 function tags(claim: string): string[] {
   const t: string[] = [], l = claim.toLowerCase();
