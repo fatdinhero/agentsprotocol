@@ -3,4 +3,7 @@
 /detect     /detect/     301
 /detect/    /detect/index.html    200
 /validate   https://agentsprotocol-detect.fly.dev/validate   200
+/validate/  https://agentsprotocol-detect.fly.dev/validate   200
 /health     https://agentsprotocol-detect.fly.dev/health     200
+/health/    https://agentsprotocol-detect.fly.dev/health     200
+/api/health https://agentsprotocol-detect.fly.dev/health     200
