@@ -33,7 +33,7 @@ function psi(claim: string): number {
 function tags(claim: string): string[] {
   const t: string[] = [], l = claim.toLowerCase();
   if (/never|always|100%|guaranteed/.test(l)) t.push("Absolut-Language");
-  if (/shocking|breaking|revealed|exposed|alert/.test(l)) t.push("Sensationalism");
+  if (/shocking|breaking|revealed|exposed|alert|never told|hidden truth/.test(l)) t.push("Sensationalism");
   if (/conspiracy|hoax|cover.?up/.test(l)) t.push("Conspiracy");
   if (/fear|danger|crisis|emergency/.test(l)) t.push("Fear-Language");
   if (/10x|100x|moon|rocket/.test(l)) t.push("Hype");
@@ -56,7 +56,7 @@ export default async (req: Request, _ctx: Context) => {
     const pen = AMP[amplification.toLowerCase()] ?? 1.0;
     const sg = tags(claim); const tp = 1 - sg.length * 0.06;
     const sc = sCon(claim); const ps = psi(claim);
-    const comboFactor = (sg.includes("Conspiracy") && (sg.includes("Sensationalism") || sg.includes("Fear-Language"))) ? 0.12 : 1.0;
+    const comboFactor = ((sg.includes("Conspiracy") || sg.includes("Absolut-Language")) && sg.includes("Sensationalism")) ? 0.12 : 1.0;
     const t = Math.max(0.1, bt*pen*tp*comboFactor), c = Math.max(0.1, bc*(0.5+sc*0.5)*comboFactor);
     const r = Math.max(0.1, br*ps), e = Math.max(0.1, be*pen*comboFactor);
     const ws = t*c*r*e;
